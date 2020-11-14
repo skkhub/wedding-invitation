@@ -39,7 +39,17 @@ module.exports = {
       {
         test: /\.mp3$/,
         use: [
-          'file-loader'
+          {
+            loader: 'file-loader',
+            options: {
+              // limit: 512,
+              name: '[hash:8].[ext]',
+              useRelativePath: false,
+              outputPath: function(fileName) {
+                  return 'assets/'+fileName
+              }
+            }
+          }
         ]
       }
     ]
