@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, '../src', 'index.js'),
@@ -55,7 +56,7 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.resolve(__dirname, '../dist'),
+    // contentBase: path.resolve(__dirname, '../dist'),
     hot: true,
     historyApiFallback: true,
     compress: true
@@ -70,6 +71,13 @@ module.exports = {
       // favicon: '../src/demo.png'          // 网页图标
     }),
 
+    new CopyWebpackPlugin({
+      patterns: [{
+        context: path.resolve(__dirname, '..'),
+        from: 'static'
+        // to: 'dist'
+      }]
+    }),
     // 热更新
     new webpack.HotModuleReplacementPlugin()
   ],

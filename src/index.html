@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="icon" sizes="any" mask="" href="favicon.ico">
     <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1">
 </head>
 <body>
@@ -123,7 +124,7 @@
                 <div class="slide14-bottom ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
                 <div class="slide14-content ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
                     <h1 class="slide14-h1 ani" swiper-animate-effect="rotateInDownLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1s"></h1>
-                    <div class="slide14-map ani" swiper-animate-effect="rotateInDownLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1.2s"></div>
+                    <div class="slide14-map" id="map"><span>点击放大</span></div>
                     <p class="slide14-p1 ani" swiper-animate-effect="rotateInDownRight" swiper-animate-duration="1.5s" swiper-animate-delay="1.4s">2021年1月2日 10:58</p>
                     <p class="slide14-p2 ani" swiper-animate-effect="rotateInDownRight" swiper-animate-duration="1.5s" swiper-animate-delay="1.6s">农历：冬月十九（周六）</p>
                     <div class="slide14-line ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s"></div>
@@ -142,6 +143,26 @@
         <!-- <div class="swiper-scrollbar"></div> -->
     </div>
 
+<script>
+    var globalMap = document.getElementById('map');
+    var isMapOpen = false;
+    function openMap() {
+        globalMap.classList.add('show-map');
+        globalMap.removeEventListener('click', openMap);
+        setTimeout(function() {
+            globalMap.addEventListener('touchend', closeMap);
+        }, 500);
+    }
+    function closeMap() {
+        globalMap.classList.remove('show-map');
+        globalMap.removeEventListener('touchend', closeMap);
+        setTimeout(function() {
+            globalMap.addEventListener('click', openMap);
+        }, 500);
+    }
+    globalMap.addEventListener('click', openMap);
+    // globalMap.addEventListener('touchend', closeMap);
+</script>
 </body>
 
 </html>

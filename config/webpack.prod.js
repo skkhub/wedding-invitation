@@ -6,7 +6,7 @@ var CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 module.exports = {
   entry: path.resolve(__dirname, '../src/', 'index.js'),
   output: {
-    path: path.resolve(__dirname, '..', 'docs'),
+    path: path.resolve(__dirname, '..', 'wedding-invitation'),
     filename: 'bundle.js'
   },
   module: {
@@ -24,7 +24,7 @@ module.exports = {
             {
               loader: 'url-loader',
               options: {
-                  limit: 512,
+                  limit: 256,
                   name: '[hash:8].[ext]',
                   useRelativePath: false,
                   outputPath: function(fileName){
