@@ -419,7 +419,7 @@ body {
     background: url('./assets/slide14_bg.png') no-repeat center / contain;
 }
 .slide14-h1 {
-    margin: 10vh auto 20vh;
+    margin: 10vh auto 24vh;
     width: 40vw;
     height: 10vh;
     /* outline: 1px solid red; */
@@ -441,7 +441,7 @@ body {
     white-space: pre-wrap;
     /* outline: 1px solid red; */
     padding: 0 10vw;
-    line-height: 2;
+    line-height: 1.5;
 }
 .slide14-p2 {
     word-break: break-word;
@@ -450,6 +450,7 @@ body {
     text-align: center;
     font-family: sbft_FZLanTingHeiS-EL-GB_z80ghJXVZe9m59_5-Ydk2g;
     font-weight: 700;
+    line-height: 1.5;
 }
 .slide14-line {
     margin: 1vh auto;
@@ -467,7 +468,7 @@ body {
     z-index: 11;
     /* background: #fff; */
     width: 50vw;
-    height: 30vw;
+    height: 18vh;
     background: url('./assets/map.png') no-repeat center / cover;
     transition: 1s;
 }
