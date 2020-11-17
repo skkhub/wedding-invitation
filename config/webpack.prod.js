@@ -6,7 +6,7 @@ var CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 module.exports = {
   entry: path.resolve(__dirname, '../src/', 'index.js'),
   output: {
-    path: path.resolve(__dirname, '..', 'wedding-invitation'),
+    path: path.resolve(__dirname, '..', 'docs'),
     filename: 'bundle.js'
   },
   module: {
